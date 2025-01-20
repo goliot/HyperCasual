@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 1605792548817550107}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!136 &8933577913867482457
 CapsuleCollider:
@@ -54,10 +54,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.114364356
-  m_Height: 0.6502263
+  m_Radius: 0.15291676
+  m_Height: 0.6106351
   m_Direction: 1
-  m_Center: {x: -0.000704512, y: 0.30459443, z: 0.049732}
+  m_Center: {x: -0.000704512, y: 0.32439002, z: 0.0882844}
 --- !u!54 &7415381824543271776
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc84e3185f4f4ff479167fe73488944e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1001 &1279676150490094832
 PrefabInstance:
   m_ObjectHideFlags: 0
