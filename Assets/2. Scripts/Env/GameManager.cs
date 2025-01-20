@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("# Game Objects")]
+    public PoolManager poolManager;
+    public Spawner spawner;
+    public GameObject player;
+
     private void Awake()
     {
         if(Instance == null)
