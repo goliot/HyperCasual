@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float limitValue;
+    [SerializeField] private GameObject scoreBoard;
 
     private void Update()
     {
@@ -22,5 +23,6 @@ public class PlayerMovement : MonoBehaviour
         float finalXPos = Mathf.Clamp(xPos * limitValue, -limitValue, limitValue);
 
         playerTransform.localPosition = new Vector3(finalXPos, 0, 0);
+        scoreBoard.transform.localPosition = playerTransform.localPosition;
     }
 }

@@ -11,11 +11,15 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public GameObject player;
 
+    [Header("# Score")]
+    public int score;
+
     private void Awake()
     {
         if(Instance == null)
             Instance = this;
         Time.timeScale = 1.0f;
+        score = 0;
     }
 
     public void Victory()
