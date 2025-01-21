@@ -2258,6 +2258,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 638803980550593866, guid: ff87e858b1640ab40a56db066dbeb039, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 638803980550593866, guid: ff87e858b1640ab40a56db066dbeb039, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3d619dab5ac38c042b7248d15d09f319, type: 2}
+    - target: {fileID: 638803980550593866, guid: ff87e858b1640ab40a56db066dbeb039, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1708099834481455272, guid: ff87e858b1640ab40a56db066dbeb039, type: 3}
       propertyPath: scoreBoard
       value: 
