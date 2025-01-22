@@ -15,7 +15,15 @@ public class PlayerAnimation : MonoBehaviour
     {
         if(other.gameObject.tag == "Block")
         {
-            anim.SetTrigger("kick");
+            if (GameManager.Instance.score >= other.gameObject.GetComponent<Block>().hp)
+            {
+                anim.SetTrigger("kick");
+                other.gameObject.GetComponent<Block>().Explode();
+            }
+            else
+            {
+                anim.SetTrigger("die");
+            }
         }
     }
 }

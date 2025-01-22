@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -16,18 +17,16 @@ public class Block : MonoBehaviour
     private float explosionRadius = 5f;
     [SerializeField]
     private Transform explosionPoint;
+    [SerializeField]
+    private TextMeshPro text;
 
-
-
-    private void OnTriggerEnter(Collider other)
+    public int hp;
+    private void Awake()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            Explode();
-        }
+        hp = int.Parse(text.text);
     }
 
-    void Explode()
+    public void Explode()
     {
         completeBox.SetActive(false);
         brokenBox.SetActive(true);
