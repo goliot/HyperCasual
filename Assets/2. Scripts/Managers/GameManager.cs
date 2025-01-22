@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     [Header("# Game Objects")]
+    public ParticleManager particleManager;
     public PoolManager poolManager;
     public Spawner spawner;
     public GameObject player;
@@ -16,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-            Instance = this;
+        Instance = this;
+
         Time.timeScale = 1.0f;
         score = 0;
     }
