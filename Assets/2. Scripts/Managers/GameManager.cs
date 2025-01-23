@@ -1,3 +1,4 @@
+using PathCreation.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public PoolManager poolManager;
     public Spawner spawner;
     public GameObject player;
+    public PathFollower pathFollower;
 
     [Header("# Score")]
     public int score;
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         Time.timeScale = 1.0f;
-        score = 0;
+        score = 1;
     }
 
     public void Victory()
