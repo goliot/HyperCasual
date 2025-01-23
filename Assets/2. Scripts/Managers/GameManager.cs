@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public GameObject player;
     public PathFollower pathFollower;
+    public PlayerAnimation playerAnimation;
 
     [Header("# Score")]
     public int score;
@@ -22,11 +23,13 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         Time.timeScale = 1.0f;
-        score = 1;
+        score = 3;
     }
 
     public void Victory()
     {
+
+        playerAnimation.anim.SetTrigger("win");
         CoVictory();
     }
 

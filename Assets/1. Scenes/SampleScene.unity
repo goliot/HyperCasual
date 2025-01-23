@@ -4166,6 +4166,7 @@ MonoBehaviour:
   spawner: {fileID: 147895444}
   player: {fileID: 1879910687}
   pathFollower: {fileID: 1112774498}
+  playerAnimation: {fileID: 1879910694}
   score: 0
 --- !u!4 &1587360417
 Transform:
@@ -4848,6 +4849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d53a3ec2227baa498a13f453879d79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &1917814169
 GameObject:
   m_ObjectHideFlags: 0
