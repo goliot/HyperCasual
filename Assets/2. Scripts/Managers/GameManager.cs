@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         Time.timeScale = 1.0f;
-        score = 3;
+        score = 1;
     }
 
     public void Victory()
