@@ -37,6 +37,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        Time.timeScale = 0;
+        pathFollower.speed = 0f;
     }
 }
