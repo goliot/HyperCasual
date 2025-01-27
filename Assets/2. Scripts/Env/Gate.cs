@@ -24,14 +24,14 @@ public class Gate : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Gate");
+            Debug.Log(gameObject.name + operation);
             switch (operation)
             {
                 case '+':
                     GameManager.Instance.score += value;
                     break;
                 case '-':
-                    GameManager.Instance.score -= value;
+                    GameManager.Instance.score += value;
                     break;
                 case '*':
                     GameManager.Instance.score *= value;

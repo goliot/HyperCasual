@@ -8,10 +8,12 @@ namespace PathCreation.Examples
     {
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
-        public float speed = 5;
+        public float speed = 7;
         float distanceTravelled;
+        public float speedToSave = 7f;
 
-        void Start() {
+        void Start() 
+        {
             if (pathCreator != null)
             {
                 // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
@@ -21,6 +23,8 @@ namespace PathCreation.Examples
 
         void Update()
         {
+            speed = GameManager.Instance.bIsGameStarted ? speedToSave : 0;
+
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;

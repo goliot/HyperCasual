@@ -2,6 +2,7 @@ using PathCreation.Examples;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class GameManager : MonoBehaviour
     public PathFollower pathFollower;
     public PlayerAnimation playerAnimation;
 
+    [Header("UI")]
+    public GameObject arrow;
+    public GameObject victoryUI;
+    public GameObject defeatUI;
+    public bool bIsGameStarted;
+
     [Header("# Score")]
     public int score;
 
@@ -22,21 +29,61 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
+        bIsGameStarted = false;
+
         Time.timeScale = 1.0f;
         score = 1;
     }
 
+    private void Update()
+    {
+        if (!bIsGameStarted)
+        {
+            return;
+        }
+
+        if (score <= 0)
+        {
+            Defeat();
+        }
+    }
+
+    public void GameStart()
+    {
+        bIsGameStarted = true;
+        playerAnimation.anim.SetBool("moving", true);
+        arrow.SetActive(false);
+    }
+
+    public void Defeat()
+    {
+        playerAnimation.anim.SetTrigger("die");
+        defeatUI.SetActive(true);
+        bIsGameStarted = false;
+    }
+
+    public void DefeatButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void Victory()
     {
-
-        playerAnimation.anim.SetTrigger("win");
-        CoVictory();
+        StartCoroutine(CoVictory());
     }
 
     IEnumerator CoVictory()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
-        pathFollower.speed = 0f;
+        playerAnimation.anim.SetTrigger("win");
+        bIsGameStarted = false;
+
+        victoryUI.SetActive(true);
+    }
+
+    public void VictoryButton()
+    {
+
     }
 }
