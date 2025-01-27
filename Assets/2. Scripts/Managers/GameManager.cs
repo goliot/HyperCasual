@@ -57,9 +57,18 @@ public class GameManager : MonoBehaviour
 
     public void Defeat()
     {
+        playerAnimation.anim.SetBool("moving", false);
         playerAnimation.anim.SetTrigger("die");
-        defeatUI.SetActive(true);
         bIsGameStarted = false;
+
+        StartCoroutine(CoDefeat());
+    }
+
+    IEnumerator CoDefeat()
+    {
+        yield return new WaitForSeconds(1f);
+
+        defeatUI.SetActive(true);
     }
 
     public void DefeatButton()
@@ -79,11 +88,12 @@ public class GameManager : MonoBehaviour
         playerAnimation.anim.SetTrigger("win");
         bIsGameStarted = false;
 
+        yield return new WaitForSeconds(0.5f);
         victoryUI.SetActive(true);
     }
 
     public void VictoryButton()
     {
-
+        // TODO : Load Next Level
     }
 }

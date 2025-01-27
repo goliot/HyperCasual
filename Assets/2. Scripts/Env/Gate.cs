@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -14,9 +15,14 @@ public class Gate : MonoBehaviour
     private void Awake()
     {
         operation = valueText.text[0];
-        if(int.TryParse(valueText.text, out int num))
+        string numberPart = Regex.Match(valueText.text, @"\d+").Value;
+        if (int.TryParse(numberPart, out int num))
         {
             value = num;
+        }
+        else
+        {
+            Debug.LogWarning("Failed to parse value from valueText.text");
         }
     }
 

@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(!GameManager.Instance.bIsGameStarted)
+        {
+            return;
+        }
+
         if(Input.GetMouseButton(0))
         {
             MovePlayer();
